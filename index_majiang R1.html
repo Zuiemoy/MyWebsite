@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>麻将计分器</title>
+    <link rel="stylesheet" href="majiang.css">
+</head>
+<body>
+    <!-- 玩家人数 -->
+    <h2 id="playerNoTitle">玩家人数</h2>
+    <div id="playerNoSection">
+        <!-- <input type="radio" id="threePlayers" name="playerNo" value="3">
+        <label for="threePlayers" class="userName">三人</label><br><br> -->
+        <input type="radio" id="fourPlayers" name="playerNo" value="4" checked>
+        <label for="fourPlayers" class="userName">四人</label>
+    </div>
+    <br id="playerNoBr">
+    <button id="playerNoNext">下一步</button>
+
+    <!-- 输入玩家 -->
+    <h2 id="userNameTitle" class="userName">庄家名字</h2>
+    <div id="inputSection" class="userName">
+        <label for="east" class="userName" id="eastLabel">东: </label>
+        <input type="text" id="eastName" class="playerName">
+        <br class="userName"><br class="userName">
+
+        <label for="south" class="userName" id="southLabel">南: </label>
+        <input type="text" id="southName" class="playerName">
+        <br class="userName"><br class="userName">
+
+        <label for="west" class="userName" id="westLabel">西: </label>
+        <input type="text" id="westName" class="playerName">
+        <br class="userName"><br class="userName">
+
+        <label for="north" class="userName" id="northLabel">北: </label>
+        <input type="text" id="northName" class="playerName">
+        <br class="userName" id="northBr-1"><br class="userName" id="northBr-2">
+    </div>
+
+    <button id="startGame" class="userName">开始</button>
+
+    <!-- 第 N 局标题 -->
+    <h2 id="gameCount"></h2>
+    <!-- 赢家标题 -->
+    <div class="titleSection">
+        <label for="loser" class="inGame">赢家</label>
+    </div>
+    <!-- 东方赢 -->
+    <form id="gameForm">
+        <div class="parentDiv">
+            <div class="inGame" id="innerBoxE-1">
+                <input type="checkbox" value="eastWin" class="inGame" id="eastWinCheck">
+                <label for="eastWinCheck" class="inGame" id="eastWin"></label>
+                <br><br><br>
+                <label for="coverEast" class="inGame">包:</label><br>
+                <input type="checkbox" value="southCover" class="inGame" id="southCoverCheckE">
+                <label for="southCoverCheckE" class="inGame" id="southCoverE"></label>
+                <br><input type="checkbox" value="westCover" class="inGame" id="westCoverCheckE">
+                <label for="westCoverCheckE" class="inGame" id="westCoverE"></label>
+                <br>
+                <input type="checkbox" value="northCover" class="inGame" id="northCoverCheckE">
+                <label for="northCoverCheckE" class="inGame" id="northCoverE"></label>
+            </div>
+
+            <div class="inGame" id="innerBoxE-2">
+                <label for="flowerE" class="inGame">底花:</label>
+                <input id="flowerE" type="number" min="0" class="inGame">
+                <br><br>
+                <label for="win" class="inGame">牌型:</label>
+                <br>
+                <input type="radio" id="hunyiseE" value="hunyise" name="paixingE" class="inGame">
+                <label for="hunyiseE" class="inGame">混一色</label>
+                <input type="radio" id="qingyiseE" value="qingyise" name="paixingE" class="inGame">
+                <label for="qingyiseE" class="inGame">清一色</label>
+                <input type="radio" id="pengpengE" value="pengpeng" name="paixingE" class="inGame">
+                <label for = "pengpengE" class="inGame">碰碰胡</label>
+                <input type="radio" id="hunpengE" value="hunpeng" name="paixingE" class="inGame">
+                <label for = "hunpengE" class="inGame">混碰</label>
+                <input type="radio" id="qingpengE" value="qingpeng" name="paixingE" class="inGame">
+                <label for = "qingpengE" class="inGame">清碰</label>
+                <input type="radio" id="fengE" value="feng" name="paixingE" class="inGame">
+                <label for = "fengE" class="inGame">纯风向</label>
+                <br><br>
+
+                <label for="bonus" class="inGame">其他番:</label>
+                <br> 
+                <input type="checkbox" id="dadiaocheE" value="dadiaoche" class="inGame">
+                <label for="dadiaocheE" class="inGame">大吊车</label>
+                <input type="checkbox" id="haidiE" value="haidi" class="inGame">
+                <label for="haidiE" class="inGame">海底捞月</label>
+                <input type="checkbox" id="gangkaiE" value="gangkai" class="inGame">
+                <label for="gangkaiE" class="inGame">杠上开花</label>
+                <br>
+                <input type="checkbox" id="huangE" value="huang" class="inGame">
+                <label for="huangE" class="inGame">黄番</label>
+            </div>
+        </div>
+        <br class="inGame">
+        <!-- 南方赢 -->
+        <div class="parentDiv">
+            <div class="inGame" id="innerBoxS-1">
+                <input type="checkbox" value="southWin" class="inGame" id="southWinCheck">
+                <label for="southWinCheck" class="inGame" id="southWin"></label>
+                <br><br><br>
+                <label for="coverEast" class="inGame">包:</label><br>
+                <input type="checkbox" value="eastCover" class="inGame" id="eastCoverCheckS">
+                <label for="eastCoverCheckS" class="inGame" id="eastCoverS"></label>
+                <br>
+                <input type="checkbox" value="westCover" class="inGame" id="westCoverCheckS">
+                <label for="westCoverCheckS" class="inGame" id="westCoverS"></label>
+                <br>
+                <input type="checkbox" value="northCover" class="inGame" id="northCoverCheckS">
+                <label for="northCoverCheckS" class="inGame" id="northCoverS"></label>
+            </div>
+
+            <div class="inGame" id="innerBoxS-2">
+                <label for="flowerS" class="inGame">底花:</label>
+                <input id="flowerS" type="number" min="0" class="inGame">
+                <br><br>
+                <label for="win" class="inGame">牌型:</label>
+                <br>
+                <input type="radio" id="hunyiseS" value="hunyise" name="paixingS" class="inGame">
+                <label for="hunyiseS" class="inGame">混一色</label>
+                <input type="radio" id="qingyiseS" value="qingyise" name="paixingS" class="inGame">
+                <label for="qingyiseS" class="inGame">清一色</label>
+                <input type="radio" id="pengpengS" value="pengpeng" name="paixingS" class="inGame">
+                <label for = "pengpengS" class="inGame">碰碰胡</label>
+                <input type="radio" id="hunpengS" value="hunpeng" name="paixingS" class="inGame">
+                <label for = "hunpengS" class="inGame">混碰</label>
+                <input type="radio" id="qingpengS" value="qingpeng" name="paixingS" class="inGame">
+                <label for = "qingpengS" class="inGame">清碰</label>
+                <input type="radio" id="fengS" value="feng" name="paixingS" class="inGame">
+                <label for = "fengS" class="inGame">纯风向</label>
+                <br><br>
+
+                <label for="bonus" class="inGame">其他番:</label>
+                <br> 
+                <input type="checkbox" id="dadiaocheS" value="dadiaoche" class="inGame">
+                <label for="dadiaocheS" class="inGame">大吊车</label>
+                <input type="checkbox" id="haidiS" value="haidi" class="inGame">
+                <label for="haidiS" class="inGame">海底捞月</label>
+                <input type="checkbox" id="gangkaiS" value="gangkai" class="inGame">
+                <label for="gangkaiS" class="inGame">杠上开花</label>
+                <br>
+                <input type="checkbox" id="huangS" value="huang" class="inGame">
+                <label for="huangS" class="inGame">黄番</label>
+            </div>
+        </div>
+        <br class="inGame">
+        <!-- 西方赢 -->
+        <div class="parentDiv">
+            <div class="inGame" id="innerBoxW-1">
+                <input type="checkbox" value="westWin" class="inGame" id="westWinCheck">
+                <label for="westWinCheck" class="inGame" id="westWin"></label>
+                <br><br><br>
+                <label for="coverEast" class="inGame">包:</label><br>
+                <input type="checkbox" value="eastCover" class="inGame" id="eastCoverCheckW">
+                <label for="eastCoverCheckW" class="inGame" id="eastCoverW"></label>
+                <br>
+                <input type="checkbox" value="southCover" class="inGame" id="southCoverCheckW">
+                <label for="southCoverCheckW" class="inGame" id="southCoverW"></label>
+                <br>
+                <input type="checkbox" value="northCover" class="inGame" id="northCoverCheckW">
+                <label for="northCoverCheckW" class="inGame" id="northCoverW"></label>
+            </div>
+
+            <div class="inGame" id="innerBoxW-2">
+                <label for="flowerW" class="inGame">底花:</label>
+                <input id="flowerW" type="number" min="0" class="inGame">
+                <br><br>
+                <label for="win" class="inGame">牌型:</label>
+                <br>
+                <input type="radio" id="hunyiseW" value="hunyise" name="paixingW" class="inGame">
+                <label for="hunyiseW" class="inGame">混一色</label>
+                <input type="radio" id="qingyiseW" value="qingyise" name="paixingW" class="inGame">
+                <label for="qingyiseW" class="inGame">清一色</label>
+                <input type="radio" id="pengpengW" value="pengpeng" name="paixingW" class="inGame">
+                <label for = "pengpengW" class="inGame">碰碰胡</label>
+                <input type="radio" id="hunpengW" value="hunpeng" name="paixingW" class="inGame">
+                <label for = "hunpengW" class="inGame">混碰</label>
+                <input type="radio" id="qingpengW" value="qingpeng" name="paixingW" class="inGame">
+                <label for = "qingpengW" class="inGame">清碰</label>
+                <input type="radio" id="fengW" value="fengW" name="paixingW" class="inGame">
+                <label for = "fengW" class="inGame">纯风向</label>
+                <br><br>
+
+                <label for="bonus" class="inGame">其他番:</label>
+                <br> 
+                <input type="checkbox" id="dadiaocheW" value="dadiaoche" class="inGame">
+                <label for="dadiaocheW" class="inGame">大吊车</label>
+                <input type="checkbox" id="haidiW" value="haidi" class="inGame">
+                <label for="haidiW" class="inGame">海底捞月</label>
+                <input type="checkbox" id="gangkaiW" value="gangkai" class="inGame">
+                <label for="gangkaiW" class="inGame">杠上开花</label>
+                <br>
+                <input type="checkbox" id="huangW" value="huang" class="inGame">
+                <label for="huangW" class="inGame">黄番</label>
+            </div>
+        </div>
+        <br class="inGame">
+        <!-- 北方赢 -->
+        <div class="parentDiv" id = "northDiv">
+            <div class="inGame" id="innerBoxN-1">
+                <input type="checkbox" value="northWin" class="inGame" id="northWinCheck">
+                <label for="northWinCheck" class="inGame" id="northWin"></label>
+                <br><br><br>
+                <label for="coverEast" class="inGame">包:</label><br>
+                <input type="checkbox" value="eastCover" class="inGame" id="eastCoverCheckN">
+                <label for="eastCoverCheckN" class="inGame" id="eastCoverN"></label>
+                <br>
+                <input type="checkbox" value="southCover" class="inGame" id="southCoverCheckN">
+                <label for="southCoverCheckN" class="inGame" id="southCoverN"></label>
+                <br>
+                <input type="checkbox" value="westCover" class="inGame" id="westCoverCheckN">
+                <label for="westCoverCheckN" class="inGame" id="westCoverN"></label>
+            </div>
+
+            <div class="inGame" id="innerBoxN-2">
+                <label for="flowerN" class="inGame">底花:</label>
+                <input id="flowerN" type="number" min="0" class="inGame">
+                <br><br>
+                <label for="win" class="inGame">牌型:</label>
+                <br>
+                <input type="radio" id="hunyiseN" value="hunyise" name="paixingN" class="inGame">
+                <label for="hunyiseN" class="inGame">混一色</label>
+                <input type="radio" id="qingyiseN" value="qingyise" name="paixingN" class="inGame">
+                <label for="qingyiseN" class="inGame">清一色</label>
+                <input type="radio" id="pengpengN" value="pengpeng" name="paixingN" class="inGame">
+                <label for = "pengpengN" class="inGame">碰碰胡</label>
+                <input type="radio" id="hunpengN" value="hunpeng" name="paixingN" class="inGame">
+                <label for = "hunpengN" class="inGame">混碰</label>
+                <input type="radio" id="qingpengN" value="qingpeng" name="paixingN" class="inGame">
+                <label for = "qingpengN" class="inGame">清碰</label>
+                <input type="radio" id="fengN" value="feng" name="paixingN" class="inGame">
+                <label for = "fengN" class="inGame">纯风向</label>
+                <br><br>
+
+                <label for="bonus" class="inGame">其他番:</label>
+                <br> 
+                <input type="checkbox" id="dadiaocheN" value="dadiaoche" class="inGame">
+                <label for="dadiaocheN" class="inGame">大吊车</label>
+                <input type="checkbox" id="haidiN" value="haidi" class="inGame">
+                <label for="haidiN" class="inGame">海底捞月</label>
+                <input type="checkbox" id="gangkaiN" value="gangkai" class="inGame">
+                <label for="gangkaiN" class="inGame">杠上开花</label>
+                <br>
+                <input type="checkbox" id="huangN" value="huang" class="inGame">
+                <label for="huangN" class="inGame">黄番</label>
+            </div>
+        </div>
+        <br class="inGame">
+        <!-- 放炮标题 -->
+        <div class="titleSection">
+            <label for="loser" class="inGame">放炮</label>
+        </div>
+        <!-- 放炮选项 -->
+        <div class="titleSection">
+            <input type="radio" value="eastLose" name="loser" class="inGame" id="eastLoseCheck">
+            <label for="eastLoseCheck" class="inGame" id="eastLose"></label>
+            <input type="radio" value="southLose" name="loser" class="inGame" id="southLoseCheck">
+            <label for = "southLoseCheck" class="inGame" id="southLose"></label>
+            <input type="radio" value="westLose" name="loser" class="inGame" id="westLoseCheck">
+            <label for="westLoseCheck" class="inGame" id="westLose"></label>
+            <input type="radio" value="northLose" name="loser" class="inGame" id="northLoseCheck">
+            <label for = "northLoseCheck" class="inGame" id="northLose"></label>
+            <input type="radio" value="allLose" name="loser" class="inGame" id="allLoseCheck">
+            <label for = "allLoseCheck" class="inGame" id="allLose">自摸</label>
+        </div>
+        <br class="inGame">
+    </form>
+    <button action="submit" id="finishRound">结算本局</button>
+
+    <!-- 显示目前总分 -->
+    <h2 id="totalScoreTitle" class="scoreBoard">分数一览</h2>
+    <table id="scoreTable" class="scoreBoard">
+        <tr id="totalScoreHeader" class="scoreBoard">
+            <th id="gameCountHeader" class="scoreBoard">局数</th>
+            <th id="eastHeader" class="scoreBoard"></th>
+            <th id="southHeader" class="scoreBoard"></th>
+            <th id="westHeader" class="scoreBoard"></th>
+            <th id="northHeader" class="scoreBoard"></th>
+        </tr>
+        <tr id="totalScore" class="scoreBoard">
+            <td id="gameCountTd" class="scoreBoard"></td>
+            <td id="eastScoreTd" class="scoreBoard"></td>
+            <td id="southScoreTd" class="scoreBoard"></td>
+            <td id="westScoreTd" class="scoreBoard"></td>
+            <td id="northScoreTd" class="scoreBoard"></td>
+        </tr>
+        <tr id="divider" class="scoreBoard">
+            <td colspan="5" id="dividingLine" class="scoreBoard"><hr></td>
+        </tr>
+        <tr id="total" class="scoreBoard">
+            <td id="totalTd" class="scoreBoard">总计</td>
+            <td id="eastTotalTd" class="scoreBoard"></td>
+            <td id="southTotalTd" class="scoreBoard"></td>
+            <td id="westTotalTd" class="scoreBoard"></td>
+            <td id="northTotalTd" class="scoreBoard"></td>
+        </tr>
+    </table>
+    <br>
+    <div id="next">
+    <button id="nextGame" class="nextButton">下一局</button>
+    <button id="endGame" class="nextButton">结束游戏</button>
+    </div>
+
+    <!-- 结束游戏 -->
+    <div class="winning">
+        <img src="celebrate.gif" class="finalWin" id="celebrateGif">
+        <div class="winText">
+            <h2 id="winnerTitle" class="finalWin">赢家</h2>
+            <h2 id="winnerName" class="finalWin"></h2>
+        </div>
+    </div>
+
+    <script src="majiang.js"></script>
+</body>
+</html>
